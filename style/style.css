@@ -1,0 +1,150 @@
+nav {
+    border-radius: 0 0 8px 8px !important;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 5px 1px rgba(74, 74, 74, 0.1) !important;
+}
+
+.form-control {
+    height: 36px !important;
+    width: 548px !important;
+    border-radius: 10px !important;
+    background-color: rgba(142, 142, 147, 0.12) !important;
+    margin-top: 14px !important;
+    margin-bottom: 14px !important;
+}
+
+.profile {
+    height: 36px !important;
+    width: 38.4px !important;
+    border-radius: 50%;
+    margin-right: 30px;
+    margin-top: 14px !important;
+    margin-bottom: 14 !important;
+    background-color: rgba(142, 142, 147, 0.12) !important;
+}
+
+.additem {
+    margin-left: 16px;
+    margin-top: 24px;
+    box-sizing: border-box !important;
+    height: 36px !important;
+    width: 128px !important;
+    border: 1px solid #0062CB !important;
+    border-radius: 18px !important;
+    background-color: #FFFFFF !important;
+    color: #0062CB;
+    margin-bottom: 16px !important;
+}
+
+.ul-menu {
+    list-style: none;
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 0.8px;
+    margin: 0;
+}
+
+.ul-menu2 {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 0.8px;
+    margin-top: 24px !important;
+}
+
+.kategori {
+    height: 19px;
+    width: 29px;
+    color: #231F20;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+    margin-left: 28px;
+    margin-bottom: 29px;
+    background-color: #FAFAFA;
+}
+
+.kategori:hover {
+    color: #FF2800;
+}
+
+.sub-kategori {
+    margin-top: 30px;
+}
+
+.menu-sub {
+    margin-right: 38px;
+    height: 24px;
+    width: 62px;
+    color: #AAAAAA;
+    font-family: Roboto;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 24px;
+}
+
+.menu-sub:hover {
+    border-bottom: 2px solid currentColor;
+    border-bottom-color: #FF2800;
+}
+
+.card {
+    float: left;
+    margin-right: 21px;
+    margin-top: 18px;
+    height: 193px;
+    width: 139px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 3px 5px 1px rgba(74, 74, 74, 0.1);
+}
+
+.card:hover {
+    border: 1px solid #FF2800;
+    border-radius: 8px;
+}
+
+.title-card {
+    margin-top: 16px;
+    margin-left: 17px;
+    margin-bottom: 0px !important;
+    height: 34px;
+    width: 106px;
+    color: #231F20;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 17px;
+}
+
+.code-card {
+    margin-top: 8px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    height: 14px;
+    width: 52px;
+    color: #484848;
+    font-family: "Open Sans";
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.pagination {
+    position: absolute;
+    margin-top: 92%;
+}
+
+.next {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: #CACCCF;
+    margin-right: 8px;
+}
+
+.next:hover {
+    background-color: #FF2800;
+}
