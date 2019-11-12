@@ -34,12 +34,20 @@ nav {
     background-color: #FFFFFF !important;
     color: #0062CB;
     margin-bottom: 16px !important;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 19px;
+}
+
+.additem:hover {
+    background-color: #0062CB !important;
+    color: #FFFFFF;
 }
 
 .ul-menu {
     list-style: none;
     padding: 0;
-    padding-top: 20px;
     padding-bottom: 0.8px;
     margin: 0;
 }
@@ -54,20 +62,23 @@ nav {
 }
 
 .kategori {
-    height: 19px;
-    width: 29px;
+    /* height: 19px;
+    width: 29px; */
     color: #231F20;
     font-family: Roboto;
     font-size: 14px;
     font-weight: bold;
     line-height: 19px;
-    margin-left: 28px;
-    margin-bottom: 29px;
+    padding-top: 15px;
+    padding-left: 28px;
+    padding-bottom: 14px;
     background-color: #FAFAFA;
+    margin-right: 32px;
 }
 
 .kategori:hover {
     color: #FF2800;
+    background-color: #FFF4F1;
 }
 
 .sub-kategori {
@@ -133,8 +144,8 @@ nav {
 }
 
 .pagination {
-    position: absolute;
-    margin-top: 92%;
+    text-align: center !important;
+    margin-top: 88px;
 }
 
 .next {
@@ -147,4 +158,101 @@ nav {
 
 .next:hover {
     background-color: #FF2800;
+}
+
+.box-pay {
+    margin-top: 24px;
+    height: 595px;
+    width: 300px;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    box-shadow: 0 3px 5px 1px rgba(74, 74, 74, 0.1);
+}
+
+.order {
+    margin-top: 25px !important;
+    margin-left: 16px;
+}
+
+.text-order {
+    margin-top: -18px;
+    margin-left: 26px;
+    height: 20px;
+    width: 72px;
+    color: #231F20;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 20px;
+}
+
+.box-item {
+    margin-top: 27px;
+    height: 338px;
+    width: 300px;
+    background-color: #FAFAFA;
+}
+
+.total-box {
+    margin-top: 16px;
+    margin-left: 18px !important;
+}
+
+.thin-text {
+    /* height: 19px;
+    width: 60px; */
+    color: #231F20;
+    font-family: "Open Sans";
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.medium-text {
+    /* height: 21px;
+    width: 36px; */
+    color: #231F20;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 21px;
+}
+
+.save {
+    box-sizing: border-box;
+    height: 42px;
+    width: 120px;
+    border: 1px solid #FF2800;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #FF2800;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 21px;
+    margin-right: 28px;
+}
+
+.save:hover {
+    background-color: #FF2800;
+    border: 1px solid #FF2800;
+    color: #FFFFFF;
+}
+
+.pay {
+    height: 42px;
+    width: 120px;
+    border: 1px solid #FF2800;
+    border-radius: 8px;
+    background-color: #FF2800;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 21px;
+}
+
+.pay:hover {
+    background-color: #FFFFFF;
+    border: 1px solid #FF2800;
+    color: #FF2800;
 }
