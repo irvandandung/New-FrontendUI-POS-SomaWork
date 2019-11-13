@@ -217,6 +217,17 @@ nav {
     line-height: 21px;
 }
 
+.medium-text-title {
+    /* height: 21px;
+    width: 36px; */
+    color: #231F20;
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 21px;
+    margin-bottom: 15px;
+}
+
 .save {
     box-sizing: border-box;
     height: 42px;
@@ -255,4 +266,21 @@ nav {
     background-color: #FFFFFF;
     border: 1px solid #FF2800;
     color: #FF2800;
+}
+
+.scrooll {
+    height: 338px;
+    overflow: auto;
+}
+
+.item-pay {
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+.rectangle {
+    margin-top: 16px;
+    height: 1px;
+    width: 274px;
+    background-color: #D8D8D8;
 }
