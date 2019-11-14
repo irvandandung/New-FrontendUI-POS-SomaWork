@@ -6,201 +6,287 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>UI Pos</title>
 </head>
 
 <body>
-    <!-- header -->
-    <nav class="navbar" style="padding:0px !important;">
-        <form class="form-inline">
-            <img class="logokasku" src="image/poslogo.svg" style="margin-right: 33px !important; margin-left: 30px !important;" />
-            <!--imagelogo -->
-            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+    <!-- navbar -->
+    <nav class="navbar form-inline px-3 py-3">
+
+        <div class="row w-100 pl-3 justify-content-center align-items-center">
+            <div class="logo" style="width: 15%">
+                <!--imagelogo -->
+                <img class="logokasku" src="image/poslogo.svg" />
+            </div>
             <!--input search -->
-        </form>
-        <div class="form-inline">
-            <a style="margin-right: 8px !important;">Raka Yudha</a>
-            <div class="my-2 my-lg-0 profile">
+            <form class="form-inline" style="width: 70%;">
+                <div class="form-group has-search" >
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search" style="width:580px; border: none;">
+                </div>
+            </form>
+
+            <div class="form-inline ml-auto">
+                <a style="margin-right: 8px !important;">Raka Yudha</a>
+                <div class="my-2 my-lg-0 profile">
+                </div>
             </div>
         </div>
 
     </nav>
-</body>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-2" style="padding: 0px !important">
-            <button class="additem">
-                Tambah Item
-            </button>
-            <ul class="ul-menu">
-                <li class="kategori"><a>Nasi</a></li>
-                <li class="kategori"><a>Mie</a></li>
-                <li class="kategori"><a>Discount</a></li>
-                <li class="kategori"><a>Snack</a></li>
-                <li class="kategori"><a>Minuman</a></li>
-            </ul>
-            <ul class="ul-menu2">
-                <li class="kategori"><a>Top Up</a></li>
-                <li class="kategori"><a>Bayar Tagihan</a></li>
-            </ul>
-        </div>
-        <div class="col-md-6">
-            <div class="sub-kategori">
-                <a class="menu-sub">Goreng</a>
-                <a class="menu-sub">Paket 1</a>
-                <a class="menu-sub">Tambahan</a>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2" style="padding: 0px !important">
+                <button class="additem">
+                    Tambah Item
+                </button>
+                <ul class="ul-menu">
+                    <li class="kategori"><a>Nasi</a></li>
+                    <li class="kategori"><a>Mie</a></li>
+                    <li class="kategori"><a>Discount</a></li>
+                    <li class="kategori"><a>Snack</a></li>
+                    <li class="kategori"><a>Minuman</a></li>
+                </ul>
+                <ul class="ul-menu2">
+                    <li class="kategori"><a>Top Up</a></li>
+                    <li class="kategori"><a>Bayar Tagihan</a></li>
+                </ul>
             </div>
-            <div class="row">
-                <div class="card">
-                    <img src="image/makanan.png" height="104px" width="139px" />
-                    <p class="title-card">Nasi Ayam Saus Tiram</p>
-                    <p class="code-card">KODE: TRS</p>
+            <div class="col-md-6 pt-4">
+                <div class="row sub-kategori p-0">
+                    <ul class="m-0 p-0">
+                        <li><a class="menu-sub mr-2 font-weight-bold" style="cursor: pointer;">Goreng</a></li>
+                        <li><a class="menu-sub" style="cursor: pointer;">Paket 1</a></li>
+                        <li><a class="menu-sub" style="cursor: pointer;">Tambahan</a></li>
+                    </ul>
                 </div>
-                <div class="card">
-                    <img src="image/makanan.png" height="104px" width="139px" />
-                    <p class="title-card">Nasi Ayam Saus Tiram</p>
-                    <p class="code-card">KODE: TRS</p>
-                </div>
-                <div class="card">
-                    <img src="image/makanan.png" height="104px" width="139px" />
-                    <p class="title-card">Nasi Ayam Saus Tiram</p>
-                    <p class="code-card">KODE: TRS</p>
-                </div>
-                <div class="card">
-                    <img src="image/makanan.png" height="104px" width="139px" />
-                    <p class="title-card">Nasi Ayam Saus Tiram</p>
-                    <p class="code-card">KODE: TRS</p>
-                </div>
-                <div class="card">
-                    <img src="image/makanan.png" height="104px" width="139px" />
-                    <p class="title-card">Nasi Ayam Saus Tiram</p>
-                    <p class="code-card">KODE: TRS</p>
-                </div>
-                <div class="card">
-                    <img src="image/makanan.png" height="104px" width="139px" />
-                    <p class="title-card">Nasi Ayam Saus Tiram</p>
-                    <p class="code-card">KODE: TRS</p>
-                </div>
-            </div>
-
-
-            <div class="pagination">
-                <div class="next">
-                </div>
-                <div class="next">
-                </div>
-                <div class="next">
-                </div>
-                <div class="next">
-                </div>
-            </div>
-
-        </div>
-        <div class="col-md-4">
-            <div class="box-pay">
-                <div class="order">
-                    <img src="image/not.svg" style="margin-top: 25px;" />
-                    <div class="text-order">New Order</div>
-                </div>
-                <div class="box-item">
-                    <div class="scrooll">
-                        <div class="item-pay">
-                            <div class="medium-text-title">
-                                Nasi Ayam Saus Tiram
-                            </div>
-                            <div style="display: flex;">
-                                <div class="medium-text-title" style="margin-right: 38px; margin-bottom: 12px !important;">
-                                    Rp 1.102.232
-                                </div>
-                                <img src="image/delete.svg" style="margin-top: -16px;" />
-                                <img src="image/min.svg" style="margin-top: -16px; margin-left:38px;" />
-                                <div class="medium-text-title" style="color: #231F20 !important; margin-left: 21px; ">
-                                    1
-                                </div>
-                                <img src="image/max.svg" style="margin-top: -16px; margin-left: 21px;" />
-                            </div>
-                            <div class="thin-text">pedas level 3</div>
-                            <div class="rectangle"></div>
-                        </div>
-                        <div class="item-pay">
-                            <div class="medium-text-title">
-                                Nasi Ayam Saus Tiram
-                            </div>
-                            <div style="display: flex;">
-                                <div class="medium-text-title" style="margin-right: 38px; margin-bottom: 12px !important;">
-                                    Rp 1.102.232
-                                </div>
-                                <img src="image/delete.svg" style="margin-top: -16px;" />
-                                <img src="image/min.svg" style="margin-top: -16px; margin-left:38px;" />
-                                <div class="medium-text-title" style="color: #231F20 !important; margin-left: 21px; ">
-                                    1
-                                </div>
-                                <img src="image/max.svg" style="margin-top: -16px; margin-left: 21px;" />
-                            </div>
-                            <div class="thin-text">pedas level 3</div>
-                            <div class="rectangle"></div>
-                        </div>
-                        <div class="item-pay">
-                            <div class="medium-text-title">
-                                Nasi Ayam Saus Tiram
-                            </div>
-                            <div style="display: flex;">
-                                <div class="medium-text-title" style="margin-right: 38px; margin-bottom: 12px !important;">
-                                    Rp 1.102.232
-                                </div>
-                                <img src="image/delete.svg" style="margin-top: -16px;" />
-                                <img src="image/min.svg" style="margin-top: -16px; margin-left:38px;" />
-                                <div class="medium-text-title" style="color: #231F20 !important; margin-left: 21px; ">
-                                    1
-                                </div>
-                                <img src="image/max.svg" style="margin-top: -16px; margin-left: 21px;" />
-                            </div>
-                            <div class="thin-text">pedas level 3</div>
-                            <div class="rectangle"></div>
-                        </div>
-                        <div class="item-pay">
-                            <div class="medium-text-title">
-                                Nasi Ayam Saus Tiram
-                            </div>
-                            <div style="display: flex;">
-                                <div class="medium-text-title" style="margin-right: 38px; margin-bottom: 12px !important;">
-                                    Rp 1.102.232
-                                </div>
-                                <img src="image/delete.svg" style="margin-top: -16px;" />
-                                <img src="image/min.svg" style="margin-top: -16px; margin-left:38px;" />
-                                <div class="medium-text-title" style="color: #231F20 !important; margin-left: 21px; ">
-                                    1
-                                </div>
-                                <img src="image/max.svg" style="margin-top: -16px; margin-left: 21px;" />
-                            </div>
-                            <div class="thin-text">pedas level 3</div>
-                            <div class="rectangle"></div>
-                        </div>
+                <div class="row">
+                    <div class="card">
+                        <img src="image/makanan.png" height="104px" width="139px" />
+                        <p class="title-card">Nasi Ayam Saus Tiram</p>
+                        <p class="code-card">KODE: TRS</p>
+                    </div>
+                    <div class="card">
+                        <img src="image/makanan.png" height="104px" width="139px" />
+                        <p class="title-card">Nasi Ayam Saus Tiram</p>
+                        <p class="code-card">KODE: TRS</p>
+                    </div>
+                    <div class="card">
+                        <img src="image/makanan.png" height="104px" width="139px" />
+                        <p class="title-card">Nasi Ayam Saus Tiram</p>
+                        <p class="code-card">KODE: TRS</p>
+                    </div>
+                    <div class="card">
+                        <img src="image/makanan.png" height="104px" width="139px" />
+                        <p class="title-card">Nasi Ayam Saus Tiram</p>
+                        <p class="code-card">KODE: TRS</p>
+                    </div>
+                    <div class="card">
+                        <img src="image/makanan.png" height="104px" width="139px" />
+                        <p class="title-card">Nasi Ayam Saus Tiram</p>
+                        <p class="code-card">KODE: TRS</p>
+                    </div>
+                    <div class="card">
+                        <img src="image/makanan.png" height="104px" width="139px" />
+                        <p class="title-card">Nasi Ayam Saus Tiram</p>
+                        <p class="code-card">KODE: TRS</p>
                     </div>
                 </div>
-                <div class="row total-box" style="margin-left: 2px;">
-                    <div class="thin-text" style="margin-right: 135px;">Sub Total</div>
-                    <div class="thin-text">Rp 202.500</div>
-                </div>
-                <div class="row total-box" style="margin-left: 2px;">
-                    <div class="thin-text" style="margin-right: 112px;">Tax and Fees</div>
-                    <div class="thin-text">Rp 202.500</div>
+
+
+                <div class="pagination">
+                    <div class="next">
+                    </div>
+                    <div class="next">
+                    </div>
+                    <div class="next">
+                    </div>
+                    <div class="next">
+                    </div>
                 </div>
 
-                <div class="row total-box" style="margin-left: 2px; margin-top:24px !important">
-                    <div class="medium-text" style="margin-right: 137px;">Total</div>
-                    <div class="medium-text">Rp 1.202.500</div>
+            </div>
+            <div class="col-pay col-md-4 pr-3">
+                <div class="box-pay w-100 h-100">
+                 <div class="order form-inline font-weight-bold">
+                    <img class="mx-3" src="image/not.svg"  />
+                    <div class="text-order">New Order</div>
+                </div>
+                <div class="box-item w-100">
+                    <div class="scrooll">
+
+                        <div class="item-pay p-3">
+                            <div class="row  mb-3">
+                                <div class="col font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-3">
+                                <div class="col-sm-4 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                                <div class="col d-flex justify-content-end"><img src="image/delete.svg"/></div>
+                                <div class="col d-flex justify-content-end"><img src="image/min.svg" /></div>
+                                <div class="col d-flex justify-content-end">
+                                    <!-- <div class="medium-text-title""> -->
+                                      1
+                                      <!-- </div> -->
+                                  </div>
+                                  <div class="col d-flex justify-content-end">
+                                    <img src="image/max.svg" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    pedas level 3
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay p-3">
+                            <div class="row  mb-3">
+                                <div class="col font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-3">
+                                <div class="col-sm-4 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                                <div class="col d-flex justify-content-end"><img src="image/delete.svg"/></div>
+                                <div class="col d-flex justify-content-end"><img src="image/min.svg" /></div>
+                                <div class="col d-flex justify-content-end">
+                                    <!-- <div class="medium-text-title""> -->
+                                      1
+                                      <!-- </div> -->
+                                  </div>
+                                  <div class="col d-flex justify-content-end">
+                                    <img src="image/max.svg" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    pedas level 3
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay p-3">
+                            <div class="row  mb-3">
+                                <div class="col font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-3">
+                                <div class="col-sm-4 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                                <div class="col d-flex justify-content-end"><img src="image/delete.svg"/></div>
+                                <div class="col d-flex justify-content-end"><img src="image/min.svg" /></div>
+                                <div class="col d-flex justify-content-end">
+                                    <!-- <div class="medium-text-title""> -->
+                                      1
+                                      <!-- </div> -->
+                                  </div>
+                                  <div class="col d-flex justify-content-end">
+                                    <img src="image/max.svg" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    pedas level 3
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay p-3">
+                            <div class="row  mb-3">
+                                <div class="col font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-3">
+                                <div class="col-sm-4 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                                <div class="col d-flex justify-content-end"><img src="image/delete.svg"/></div>
+                                <div class="col d-flex justify-content-end"><img src="image/min.svg" /></div>
+                                <div class="col d-flex justify-content-end">
+                                    <!-- <div class="medium-text-title""> -->
+                                      1
+                                      <!-- </div> -->
+                                  </div>
+                                  <div class="col d-flex justify-content-end">
+                                    <img src="image/max.svg" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    pedas level 3
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+
+                    </div>
                 </div>
 
-                <div class="row total-box" style="margin-left: 2px; ">
-                    <button class="save">Simpan</button>
-                    <button class="pay">Bayar</button>
+                <div class="row total-box">
+                    <div class="col">
+                        <div class="font-weight-light justify-content-center align-items-center">Sub Total</div>
+                    </div>
+                    <div class="col px-5">
+                        <div class="font-weight-light d-flex justify-content-end">Rp 202.500</div>
+                    </div>
+                </div>
+
+                <div class="row total-box">
+                    <div class="col">
+                        <div class="font-weight-light justify-content-center align-items-center">Tax and Fees</div>
+                    </div>
+                    <div class="col px-5">
+                        <div class="font-weight-light d-flex justify-content-end">Rp 202.500</div>
+                    </div>
+                </div>
+
+                <div class="row total-box">
+                    <div class="col">
+                        <div class="font-weight-bold justify-content-center align-items-center">Total</div>
+                    </div>
+                    <div class="col-sm-8 px-5">
+                        <div class="font-weight-bold d-flex justify-content-end">Rp 1.202.500</div>
+                    </div>
+                </div>
+
+                <div class="row p-3">
+                    <div class="col pl-4">
+                        <button class="save w-100">Simpan</button>
+                    </div>
+                    <div class="col pl-5 d-flex justify-content-end">
+                        <button class="pay w-100">Bayar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </div>
+</body>
+<div class="col"></div>
 
 </html>
