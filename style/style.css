@@ -1,6 +1,12 @@
 body{
     width: 100%;
     height: 100%;
+    font-family: 'Roboto' !important;
+    
+}
+
+p{
+    font-family: 'Open Sans', sans-serif !important;
 }
 
 nav {
@@ -158,7 +164,7 @@ margin-right: 32px;
 }
 
 
-.card {
+/*.card {
     float: left;
     margin-right: 21px;
     margin-top: 18px;
@@ -167,14 +173,14 @@ margin-right: 32px;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0);
     box-shadow: 0 3px 5px 1px rgba(74, 74, 74, 0.1);
-}
+}*/
 
 .card:hover {
     border: 1px solid #FF2800;
-    border-radius: 8px;
+    /*border-radius: 8px;*/
 }
 
-.title-card {
+/*.title-card {
     margin-top: 16px;
     margin-left: 17px;
     margin-bottom: 0px !important;
@@ -198,11 +204,11 @@ margin-right: 32px;
     font-size: 10px;
     font-weight: bold;
     line-height: 14px;
-}
+}*/
 
 .pagination {
     text-align: center !important;
-    margin-top: 88px;
+    margin-top: 5%;
 }
 
 .next {
@@ -232,13 +238,9 @@ margin-right: 32px;
     margin-left: 16px;
 }
 
-.text-order {
-    font-family: Roboto;
-}
-
 .box-item {
     margin-top: 27px;
-    height: 338px;
+    height: 65%;
     width: 300px;
     background-color: #FAFAFA;
 }
@@ -318,8 +320,8 @@ margin-right: 32px;
     color: #FF2800;
 }
 
-.scrooll {
-    height: 338px;
+.scroll {
+    height: 100%;
     overflow: auto;
 }
 
