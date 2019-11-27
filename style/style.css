@@ -23,6 +23,19 @@ nav {
     margin-bottom: 14px !important;
     }*/
 
+#myModal .modal-dialog {
+    /*-webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 50%;*/
+    z-index: 1000;
+    margin: 0 auto;
+    height: 100%;
+    align-items: center;
+    display: flex;
+    max-width: 80% !important;
+}
+
 .has-search .form-control {
     padding-left: 2.375rem;
     border-radius: 10px !important;
@@ -178,6 +191,10 @@ margin-right: 32px;
 .card:hover {
     border: 1px solid #FF2800;
     /*border-radius: 8px;*/
+}
+
+.add-item-card:hover{
+    border: 0px;
 }
 
 /*.title-card {
