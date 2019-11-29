@@ -15,6 +15,9 @@ nav {
     box-shadow: 0 3px 5px 1px rgba(74, 74, 74, 0.1) !important;
 }
 
+/*font*/
+
+
 /*.form-control {
     
     border-radius: 10px !important;
@@ -75,8 +78,8 @@ nav {
     background-color: #FFFFFF !important;
     color: #0062CB;
     margin-bottom: 16px !important;
-    font-family: Roboto;
-    font-size: 14px;
+    /*font-family: Roboto;
+    font-size: 14px;*/
     font-weight: bold;
     line-height: 19px;
 }
@@ -107,8 +110,8 @@ nav {
 width: 29px; */
 color: #231F20;
 font-family: Roboto;
-font-size: 14px;
-font-weight: bold;
+/*font-size: 14px;
+font-weight: bold;*/
 line-height: 19px;
 padding-top: 15px;
 padding-left: 28px;
@@ -240,6 +243,10 @@ margin-right: 32px;
     background-color: #FF2800;
 }
 
+.col-pay{
+    /*height: 100%; */
+}
+
 .box-pay {
     float: right;
     margin-top: 24px;
@@ -251,12 +258,12 @@ margin-right: 32px;
 }
 
 .order {
-    margin-top: 25px !important;
-    margin-left: 16px;
+    /*margin-top: 25px !important;*/
+    /*margin-left: 16px;*/
 }
 
 .box-item {
-    margin-top: 27px;
+    /*margin-top: 27px;*/
     height: 65%;
     width: 300px;
     background-color: #FAFAFA;
@@ -264,38 +271,38 @@ margin-right: 32px;
 
 .total-box {
     margin-top: 16px;
-    margin-left: 18px !important;
+    /*margin-left: 18px !important;*/
 }
 
-.thin-text {
-    /* height: 19px;
-    width: 60px; */
+/*.thin-text {
+     height: 19px;
+    width: 60px; 
     color: #231F20;
     font-family: "Open Sans";
     font-size: 14px;
     line-height: 19px;
-}
+}*/
 
-.medium-text {
-    /* height: 21px;
-    width: 36px; */
+/*.medium-text {
+     height: 21px;
+    width: 36px; 
     color: #231F20;
     font-family: Roboto;
     font-size: 16px;
     font-weight: bold;
     line-height: 21px;
-}
+}*/
 
-.medium-text-title {
-    /* height: 21px;
-    width: 36px; */
+/*.medium-text-title {
+     height: 21px;
+    width: 36px; 
     color: #231F20;
     font-family: Roboto;
     font-size: 14px;
     font-weight: bold;
     line-height: 21px;
     margin-bottom: 15px;
-}
+}*/
 
 .save {
     box-sizing: border-box;
@@ -305,8 +312,8 @@ margin-right: 32px;
     border-radius: 8px;
     background-color: #FFFFFF;
     color: #FF2800;
-    font-family: Roboto;
-    font-size: 16px;
+    /*font-family: Roboto;
+    font-size: 16px;*/
     font-weight: bold;
     line-height: 21px;
     margin-right: 28px;
@@ -325,8 +332,8 @@ margin-right: 32px;
     border-radius: 8px;
     background-color: #FF2800;
     color: #FFFFFF;
-    font-family: Roboto;
-    font-size: 16px;
+    /*font-family: Roboto;
+    font-size: 16px;*/
     font-weight: bold;
     line-height: 21px;
 }
@@ -338,13 +345,12 @@ margin-right: 32px;
 }
 
 .scroll {
-    height: 100%;
+    height: 45vh;
     overflow: auto;
 }
 
 .item-pay {
-    margin-top: 16px;
-    margin-left: 16px;
+    padding: 2rem 0 !important;
 }
 
 .rectangle {
@@ -352,4 +358,126 @@ margin-right: 32px;
     height: 1px;
     width: 100%;
     background-color: #D8D8D8;
+}
+
+.row-item{
+    min-height: 65vh;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 20px; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+@media only screen and (max-width: 1366px) {
+   /* .additem{
+        font-size: 14px;
+    }
+
+    .kategori{
+        font-size: 14px;
+    }
+
+    .sub-kategori{
+        font-size: 18px;
+    }*/
+
+    .card-title{
+        font-size: 16px;   
+    }
+
+    .card-text{
+        font-size: 14px;
+    }
+
+   /* .navbar-btm{
+        font-size: 10px;
+    }
+*/
+    .scroll {
+        height: 35vh;
+        overflow: auto;
+    }
+
+    .pagination{
+        margin-top:2.5%;
+    }
+
+    .row-item{
+        min-height: 69.6vh;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .additem{
+        font-size: 14px;
+    }
+
+    .kategori{
+        font-size: 14px;
+    }
+
+    .sub-kategori{
+        font-size: 18px;
+    }
+
+    .card-title{
+        font-size: 12px;   
+    }
+
+    .card-text{
+        font-size: 10px;
+    }
+
+    .img-text-order{
+        margin: 0 !important;
+    }
+
+    .text-order{
+        font-size: 15px;
+    }
+
+    .item-pay{
+        font-size: 14px;
+        /*margin-bottom: 0px !important;*/
+    }
+
+    .total-box{
+        margin-top: 0px !important;
+        font-size: 14px;
+    }
+
+    .navbar-btm{
+        font-size: 14px;
+    }
+
+    .card-body{
+        padding: 1rem !important;
+    }
+
+    .scroll {
+        height: 45vh;
+        overflow: auto;
+    }
+
+    .row-item{
+        min-height: 0;
+        height: 486.469px;
+    }
 }
