@@ -81,6 +81,32 @@
                   </div>
               </div>
             </div>
+
+            <div id="modalNoStock" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                    <div class="modal-content border-0">
+                      <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                      <div class="modal-body text-center"><img src="image/out-stock.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>Out of Stock!</p><p class="mb-4">Please choose another items</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+            <div id="modalAddItemSuccess" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                    <div class="modal-content border-0">
+                      <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                      <div class="modal-body text-center"><img src="image/success-add-item.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3 text-success"><i class="fa fa-check-circle mr-3"></i>Success adding item</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
     </nav>
     <nav class="navbar fixed-bottom navbar-light bg-light navbar-btm">
         <div class="row w-100 text-center">
@@ -317,7 +343,7 @@
                                     </div>
                                     <div class="card-footer text-right">
                                         <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">Close</a>
-                                        <button class="pay" id="submitadd">Tambah Item</button>
+                                        <button class="pay" id="submitadd" data-dismiss="modal" href="#" data-toggle="modal" data-target="#modalAddItemSuccess">Tambah Item</button>
                                     </div>
                                 </div>
                             </div>
@@ -354,7 +380,7 @@
                 </div>
                 <div class="row row-item">
                     <div class="col-xl-3 col-md-4 w-100 p-2">
-                        <div class="card shadow">
+                        <div class="card shadow" href="#" data-toggle="modal" data-target="#modalNoStock">
                             <img class="card-img-top" src="image/nasi-padang.jpg" alt="Card image cap" style="width: 100%; height: 18vh; object-fit: cover;">
                             <div class="card-body">
                               <h5 class="card-title font-weight-bold">Nasi Ayam Saus Tiram</h5>
