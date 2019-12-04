@@ -346,7 +346,8 @@ margin-right: 32px;
 
 .scroll {
     height: 45vh;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden; 
 }
 
 .item-pay {
@@ -362,6 +363,10 @@ margin-right: 32px;
 
 .row-item{
     min-height: 65vh;
+}
+
+.text-order{
+    word-break: break-word;
 }
 
 ::-webkit-scrollbar {
