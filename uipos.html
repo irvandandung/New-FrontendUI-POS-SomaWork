@@ -95,6 +95,19 @@
               </div>
             </div>
 
+            <div id="modalNoPackage" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                    <div class="modal-content border-0">
+                      <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                      <div class="modal-body text-center"><img src="image/packages.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>This Package Out of Stock!</p><p class="mb-4">Please choose another packages</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
             <div id="modalAddItemSuccess" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
                 <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
                     <div class="modal-content border-0">
@@ -380,7 +393,7 @@
                 </div>
                 <div class="row row-item">
                     <div class="col-xl-3 col-md-4 w-100 p-2">
-                        <div class="card shadow" href="#" data-toggle="modal" data-target="#modalNoStock">
+                        <div class="card shadow" href="#" data-toggle="modal" data-target="#modalNoStock" data-backdrop="static" data-keyboard="false">
                             <img class="card-img-top" src="image/nasi-padang.jpg" alt="Card image cap" style="width: 100%; height: 18vh; object-fit: cover;">
                             <div class="card-body">
                               <h5 class="card-title font-weight-bold">Nasi Ayam Saus Tiram</h5>
@@ -390,7 +403,7 @@
                         </div>
                     </div>
                     <div class="col-xl-3 col-md-4 w-100 p-2">
-                        <div class="card shadow">
+                        <div class="card shadow" href="#" data-toggle="modal" data-target="#modalNoPackage" data-backdrop="static" data-keyboard="false">
                             <img class="card-img-top" src="image/nasi-padang.jpg" alt="Card image cap" style="width: 100%; height: 18vh; object-fit: cover;">
                             <div class="card-body">
                               <h5 class="card-title font-weight-bold">Nasi Ayam Saus Tiram</h5>
