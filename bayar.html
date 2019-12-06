@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>UI Pos</title>
+    <style type="text/css">
+        .dropdown>.dropdown-menu {
+            top: 200%;
+            transition: 0.3s all ease-in-out;
+        }
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+            top: 100%;
+        }
+
+        .dropdown>.dropdown-toggle:active {
+          /*Without this, clicking will make it sticky*/
+          pointer-events: none;
+      }
+    /*img{
+        max-width:180px;
+        }*/
+        input[type=file]{
+            padding:10px;
+            background:#2d2d2d;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar form-inline px-3 py-3 w-100">
+
+        <div class="row w-100 pl-3 justify-content-center align-items-center">
+            <div class="logo" style="width: 15%">
+                <!--imagelogo -->
+                <img class="logokasku" src="image/poslogo.svg" />
+            </div>
+            <!--input search -->
+            <form class="form-inline" style="width: 70%;">
+                <div class="form-group has-search" >
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search" style="width:580px; border: none;">
+                </div>
+            </form>
+
+            <div class="form-inline ml-auto dropdown">
+                <a style="margin-right: 8px !important;">Raka Yudha</a>
+                <div class="my-2 my-lg-0 profile" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </div>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalLogout"><i class="fa fa-sign-out mr-3" aria-hidden="true"></i>Logout</a>
+                </div>
+            </div>
+
+            <!-- Small modal -->
+            <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#modalLogout">Logout modal</button> -->
+
+            <div id="modalLogout" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                    <div class="modal-content">
+                      <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div>
+                      <div class="modal-body"><p class="my-2"><i class="fa fa-question-circle mr-3"></i> Are you sure you want to log-out?</p></div>
+                      <div class="modal-footer">
+                        <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a>
+                        <button href="javascript:;" class="pay">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalNoStock" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/out-stock.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>Out of Stock!</p><p class="mb-4">Please choose another items</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalNoPackage" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/packages.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>This Package Out of Stock!</p><p class="mb-4">Please choose another packages</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalAddItemSuccess" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/success-add-item.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3 text-success"><i class="fa fa-check-circle mr-3"></i>Success adding item</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col pl-xl-5 pl-sm-3">
+                <div class="order form-inline px-xl-5 pt-xl-5 px-sm-3 pt-sm-4 align-items-center">
+                    <i class="fa fa-chevron-left fa-lg mx-3" style="color: #FF2800; "></i>
+                    <div class="order-title font-weight-bold h5 mb-0">Order #120128</div>
+                </div>
+            </div>
+        </div>
+        <div class="row p-xl-5 p-sm-3">
+            <div class="col-pay col-md-4 pr-3 h-100">
+                
+
+                <div class="box-item w-100">
+                    <div class="scroll-pay">
+
+                        <div class="item-pay px-xl-5 px-4 pt-xl-4 pt-3 pb-xl-1 pb-0">
+                            <div class="row mb-2 ">
+                                <div class="col-8 font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center font-weight-bold">
+                                    <i class="fa fa-times fa-lg d-flex align-items-end">&nbsp;</i> 12
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-2">
+                                <div class="col-sm-12 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col d-flex align-items-center">
+                                    <img src="image/notes.svg" style="width: 1.5rem; margin-right: 8px" />
+                                    <p class="text-order d-flex align-items-center m-0">Add Notes</p>
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay px-xl-5 px-4 pt-xl-4 pt-3 pb-xl-1 pb-0">
+                            <div class="row mb-2 ">
+                                <div class="col-8 font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center font-weight-bold">
+                                    <i class="fa fa-times fa-lg d-flex align-items-end">&nbsp;</i> 12
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-2">
+                                <div class="col-sm-12 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col d-flex align-items-center">
+                                    <img src="image/notes.svg" style="width: 1.5rem; margin-right: 8px" />
+                                    <p class="text-order d-flex align-items-center m-0">Add Notes</p>
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay px-xl-5 px-4 pt-xl-4 pt-3 pb-xl-1 pb-0">
+                            <div class="row mb-2 ">
+                                <div class="col-8 font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center font-weight-bold">
+                                    <i class="fa fa-times fa-lg d-flex align-items-end">&nbsp;</i> 12
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-2">
+                                <div class="col-sm-12 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col d-flex align-items-center">
+                                    <img src="image/notes.svg" style="width: 1.5rem; margin-right: 8px" />
+                                    <p class="text-order d-flex align-items-center m-0">Add Notes</p>
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay px-xl-5 px-4 pt-xl-4 pt-3 pb-xl-1 pb-0">
+                            <div class="row mb-2 ">
+                                <div class="col-8 font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center font-weight-bold">
+                                    <i class="fa fa-times fa-lg d-flex align-items-end">&nbsp;</i> 12
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-2">
+                                <div class="col-sm-12 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col d-flex align-items-center">
+                                    <img src="image/notes.svg" style="width: 1.5rem; margin-right: 8px" />
+                                    <p class="text-order d-flex align-items-center m-0">Add Notes</p>
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay px-xl-5 px-4 pt-xl-4 pt-3 pb-xl-1 pb-0">
+                            <div class="row mb-2 ">
+                                <div class="col-8 font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center font-weight-bold">
+                                    <i class="fa fa-times fa-lg d-flex align-items-end">&nbsp;</i> 12
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-2">
+                                <div class="col-sm-12 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col d-flex align-items-center">
+                                    <img src="image/notes.svg" style="width: 1.5rem; margin-right: 8px" />
+                                    <p class="text-order d-flex align-items-center m-0">Add Notes</p>
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        <div class="item-pay px-xl-5 px-4 pt-xl-4 pt-3 pb-xl-1 pb-0">
+                            <div class="row mb-2 ">
+                                <div class="col-8 font-weight-bold">
+                                    Nasi Ayam Saus Tiram
+                                </div>
+                                <div class="col d-flex justify-content-end align-items-center font-weight-bold">
+                                    <i class="fa fa-times fa-lg d-flex align-items-end">&nbsp;</i> 12
+                                </div>
+                            </div>
+
+                            <div class="row form-inline mb-2">
+                                <div class="col-sm-12 font-weight-bold justify-content-center align-items-center" >
+                                    Rp 1.102.232
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col d-flex align-items-center">
+                                    <img src="image/notes.svg" style="width: 1.5rem; margin-right: 8px" />
+                                    <p class="text-order d-flex align-items-center m-0">Add Notes</p>
+                                </div>
+                            </div>
+                            <div class="rectangle"></div>
+                        </div>
+
+                        
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="card col border-0 shadow">
+                <div class="card-header font-weight-bold py-4" style="background-color: white">
+                    Metode Pembayaran
+                </div> 
+                <div class="card-body">
+                    <div class="row pb-3">
+                        <div class="col">
+                            <p class="text-type-pay py-1 h6 font-weight-bold">Cash</p>
+                            <div class="input-group shadow rounded border-0">
+                                <div class="input-group-prepend"><span class="input-group-text border-0">Rp</span></div>
+                                <input type="text" class="form-control border-0 text-right" name="item_number" value="" id="item_number" placeholder="Masukkan Jumlah Nominal">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <p class="text-type-pay py-1 h6 font-weight-bold">e-Money</p>
+                            <div class="card d-flex border-0 shadow p-3 justify-content-center align-items-start font-weight-bold rounded-lg w-75">
+                                <div class="form-inline">
+                                    <img src="image/kasku.svg" class="mr-3">
+                                    Kasku Wallet
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row ml-1 mb-1">
+                        <p class="text-type-pay h6 font-weight-bold">EDC</p>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-xl-2 col-sm-3 mb-3">
+                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                                <div class="form-inline">
+                                    <img src="image/bca.svg" class="">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-sm-3 mb-3">
+                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                                <div class="form-inline">
+                                    <img src="image/bni.svg" class="">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-sm-3 mb-3">
+                           <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                                <div class="form-inline">
+                                    <img src="image/mandiri.svg" class="">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-sm-3 mb-3">
+                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                                <div class="form-inline">
+                                    <img src="image/cimbniaga.svg" class="">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-sm-3 mb-3">
+                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                                <div class="form-inline">
+                                    <img src="image/bri.svg" class="">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-sm-3 mb-3">
+                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                                <div class="form-inline">
+                                    <img src="image/danamon.svg" class="">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="row">
+                        <div class="col">
+                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100">
+                                <div class="form-inline">
+                                    <img src="image/kasku.svg" class="mr-3">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                           
+                        </div>
+                        <div class="col">
+                            
+                        </div>
+                        <div class="col">
+                            
+                        </div>
+                        <div class="col">
+                            
+                        </div>
+                        <div class="col">
+                            
+                        </div>
+                    </div> -->
+
+                    <div class="row p-3 mb-xl-3" style="">
+                        <div class="col pl-4 align-self-end">
+                            <div class="row">
+                                <p class="text-total h6 font-weight-bold">Total Harga</p>
+                            </div>
+                            <div class="row">
+                                <p class="text-total-harga h4 font-weight-bold" style="color: #FF2800;">Rp 2.000.000</p>
+                            </div>
+                        </div>
+                        <div class="col pl-5 d-flex align-self-end justify-content-end">
+                            <a href="bayar.html" class="btn h6 pay w-75 d-flex p-4 justify-content-center align-items-center">Bayar</a>
+                        </div>
+                    </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                // console.log(input.files[0].size);
+                if(input.files[0].size < 128000){
+                    reader.onload = function (e) {
+                        $('#img-preview')
+                        .attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);    
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>
