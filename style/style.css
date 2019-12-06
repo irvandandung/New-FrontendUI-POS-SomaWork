@@ -327,14 +327,14 @@ margin-right: 32px;
 
 .pay {
     height: 42px;
-    width: 120px;
-    border: 1px solid #FF2800;
-    border-radius: 8px;
-    background-color: #FF2800;
-    color: #FFFFFF;
+    width: 120px !important;
+    border: 1px solid #FF2800 !important;
+    border-radius: 8px !important;
+    background-color: #FF2800 !important;
+    color: #FFFFFF !important;
     /*font-family: Roboto;
     font-size: 16px;*/
-    font-weight: bold;
+    font-weight: bold !important;
     line-height: 21px;
 }
 
@@ -346,6 +346,12 @@ margin-right: 32px;
 
 .scroll {
     height: 45vh;
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
+
+.scroll-pay{
+    height: 65vh;
     overflow-y: auto;
     overflow-x: hidden; 
 }
@@ -484,5 +490,27 @@ margin-right: 32px;
     .row-item{
         min-height: 0;
         height: 486.469px;
+    }
+
+    .scroll-pay{
+        height: 70vh;
+        overflow-y: auto;
+        overflow-x: hidden; 
+    }
+
+    .order-title{
+        font-size: 18px !important;
+    }
+
+    .text-total{
+        font-size: 12px !important;
+    }
+
+    .text-total-harga{
+        font-size: 18px !important;
+    }
+
+    .text-type-pay{
+        font-size: 14px !important;
     }
 }
