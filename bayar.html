@@ -120,6 +120,32 @@
                 </div>
             </div>
         </div>
+
+        <div id="modalNoPayment" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/pay-method.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>You haven't choose the payment method!</p><p class="mb-4">Please choose payment method</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalNoMoney" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/no-money.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>Insufficient funds!</p><p class="mb-4">Please increase your amount of cash</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <div class="container-fluid">
@@ -304,12 +330,12 @@
                             <p class="text-type-pay py-1 h6 font-weight-bold">Cash</p>
                             <div class="input-group shadow rounded border-0">
                                 <div class="input-group-prepend"><span class="input-group-text border-0">Rp</span></div>
-                                <input type="text" class="form-control border-0 text-right" name="item_number" value="" id="item_number" placeholder="Masukkan Jumlah Nominal">
+                                <input type="text" class="type-pay  form-control border-0 text-right" name="item_number" value="" id="item_number" placeholder="Masukkan Jumlah Nominal" data-toggle="modal" data-target="#modalNoMoney" data-backdrop="static" data-keyboard="false">
                             </div>
                         </div>
                         <div class="col">
                             <p class="text-type-pay py-1 h6 font-weight-bold">e-Money</p>
-                            <div class="card d-flex border-0 shadow p-3 justify-content-center align-items-start font-weight-bold rounded-lg w-75">
+                            <div class="type-pay card d-flex border-0 shadow p-3 justify-content-center align-items-start font-weight-bold rounded-lg w-75">
                                 <div class="form-inline">
                                     <img src="image/kasku.svg" class="mr-3">
                                     Kasku Wallet
@@ -323,7 +349,7 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-xl-2 col-sm-3 mb-3">
-                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                            <div class="type-pay card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
                                 <div class="form-inline">
                                     <img src="image/bca.svg" class="">
                                     
@@ -331,7 +357,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-sm-3 mb-3">
-                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                            <div class="type-pay card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
                                 <div class="form-inline">
                                     <img src="image/bni.svg" class="">
                                     
@@ -339,7 +365,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-sm-3 mb-3">
-                           <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                           <div class="type-pay card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
                                 <div class="form-inline">
                                     <img src="image/mandiri.svg" class="">
                                     
@@ -347,7 +373,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-sm-3 mb-3">
-                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                            <div class="type-pay card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
                                 <div class="form-inline">
                                     <img src="image/cimbniaga.svg" class="">
                                     
@@ -355,7 +381,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-sm-3 mb-3">
-                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                            <div class="type-pay card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
                                 <div class="form-inline">
                                     <img src="image/bri.svg" class="">
                                     
@@ -363,7 +389,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-sm-3 mb-3">
-                            <div class="card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
+                            <div class="type-pay card d-flex border-0 shadow px-3 py-4 justify-content-center align-items-center font-weight-bold rounded-lg w-100 h-100">
                                 <div class="form-inline">
                                     <img src="image/danamon.svg" class="">
                                     
@@ -408,7 +434,7 @@
                             </div>
                         </div>
                         <div class="col pl-5 d-flex align-self-end justify-content-end">
-                            <a href="bayar.html" class="btn h6 pay w-75 d-flex p-4 justify-content-center align-items-center">Bayar</a>
+                            <a href="bayar.html" class="btn h6 pay w-75 d-flex p-4 justify-content-center align-items-center" data-toggle="modal" data-target="#modalNoPayment" data-backdrop="static" data-keyboard="false">Bayar</a>
                         </div>
                     </div>
             </div>

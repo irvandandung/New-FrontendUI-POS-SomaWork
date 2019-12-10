@@ -375,6 +375,16 @@ margin-right: 32px;
     word-break: break-word;
 }
 
+.type-pay{
+    cursor: pointer !important;
+}
+
+.type-pay-selected , .type-pay:hover{
+    -webkit-box-shadow:inset 0px 0px 0px 1px #f00 !important;
+    -moz-box-shadow:inset 0px 0px 0px 1px #f00 !important;
+    box-shadow:inset 0px 0px 0px 1px #f00 !important;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
