@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <title>UI Pos</title>
+    <style type="text/css">
+        .dropdown>.dropdown-menu {
+            top: 200%;
+            transition: 0.3s all ease-in-out;
+        }
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+            top: 100%;
+        }
+
+        .dropdown>.dropdown-toggle:active {
+          /*Without this, clicking will make it sticky*/
+          pointer-events: none;
+      }
+    /*img{
+        max-width:180px;
+        }*/
+        input[type=file]{
+            padding:10px;
+            background:#2d2d2d;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar form-inline px-3 py-3 w-100">
+
+        <div class="row w-100 pl-3 justify-content-center align-items-center">
+            <div class="logo" style="width: 15%">
+                <!--imagelogo -->
+                <img class="logokasku" src="image/poslogo.svg" />
+            </div>
+            <!--input search -->
+            <form class="form-inline" style="width: 70%;">
+                <div class="form-group has-search" >
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search" style="width:580px; border: none;">
+                </div>
+            </form>
+
+            <div class="form-inline ml-auto dropdown">
+                <a style="margin-right: 8px !important;">Raka Yudha</a>
+                <div class="my-2 my-lg-0 profile" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </div>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalLogout"><i class="fa fa-sign-out mr-3" aria-hidden="true"></i>Logout</a>
+                </div>
+            </div>
+
+            <!-- Small modal -->
+            <!-- <button class="btn btn-primary" data-toggle="modal" data-target="#modalLogout">Logout modal</button> -->
+
+            <div id="modalLogout" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                    <div class="modal-content">
+                      <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div>
+                      <div class="modal-body"><p class="my-2"><i class="fa fa-question-circle mr-3"></i> Are you sure you want to log-out?</p></div>
+                      <div class="modal-footer">
+                        <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a>
+                        <button href="javascript:;" class="pay">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalNoStock" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/out-stock.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>Out of Stock!</p><p class="mb-4">Please choose another items</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalNoPackage" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/packages.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3" style="color: #FF2800;"><i class="fa fa-exclamation-circle mr-3"></i>This Package Out of Stock!</p><p class="mb-4">Please choose another packages</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modalAddItemSuccess" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                <div class="modal-content border-0">
+                  <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                  <div class="modal-body text-center"><img src="image/success-add-item.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3 text-success"><i class="fa fa-check-circle mr-3"></i>Success adding item</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar fixed-bottom navbar-light bg-light navbar-btm">
+        <div class="row w-100 text-center">
+            <div class="col-sm" style="color: blue">
+                <i class="fa fa-home fa-lg"></i></br>
+                Dashboard 
+            </div>
+            <div class="col-sm">
+                <a href="history.html" style="color: #999999">
+                    <i class="fa fa-history fa-lg"></i></br>
+                    History
+                </a>
+            </div>
+            <div class="col-sm" style="color: #999999">
+                <i class="fa fa-list-alt fa-lg"></i></br>
+                Billing List
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2" style="padding: 0px !important">
+
+                <div class="modal fade overflow-hidden" id="myModal">
+                    <div class="modal-dialog" role="document">
+                     <div class="modal-content border-0">
+                        <!-- Modal Add Item -->
+                        <div class="card-group shadow-lg rounded w-100 h-75">
+                            <div class="add-item-card card bg-dark p-3 d-flex align-items-center justify-content-center">
+                                <div class="card shadow w-75 border-0">
+                                    <img id="img-preview" class="card-img-top" src="images/defaultimage.jpg" alt="Card image cap" style="width: 100%; height: 25vh; object-fit: cover; border-radius: 4px 4px 0 0;">
+                                    <!-- <img id="blah" src="http://placehold.it/180" alt="your image" /> -->
+                                    <div class="card-body">
+                                      <h5 class="card-title font-weight-bold">Nasi Ayam Saus Tiram</h5>
+                                      <p class="card-text">KODE : TRS</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="add-item-card card border-0 ">
+                            <h5 class="card-header info-color white-text text-center py-4">
+                                <strong>Add Item</strong>
+                            </h5>
+
+                            <!--Card content-->
+                            <div class="card-body px-lg-4" style="overflow-y: auto; max-height: 500px;">
+
+                                <!-- Form -->
+                                <form class="" style="color: #757575;" action="#!">    
+                                    <!-- form complex example -->
+                                    <div class="form-row">
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">Kode Barang</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <div class="input-group-prepend"><span class="input-group-text border-0"><i class="fa fa-barcode"></i></span></div>
+                                                <input type="text" class="form-control border-0" name="item_number" value="" id="item_number" placeholder="K39B">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="namaBarang">Nama Barang</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" name="name" value="" id="name" placeholder="Nasi Padang">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">Kategori</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <div class="input-group-prepend"><span class="input-group-text border-0"><i class="fa fa-tag" aria-hidden="true"></i></span></div>
+                                                <select class="form-control border-0" name="category" id="category">
+                                                    <option value="">Pick a state</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">Sub Kategori</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <div class="input-group-prepend"><span class="input-group-text border-0"><i class="fa fa-tag fa-6" aria-hidden="true"></i></span></div>
+                                                <select class="form-control border-0" name="sub_category" id="sub_category">
+                                                    <option value="">Pick a state</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="kodeBarang">Tambah Atribut</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <select class="form-control border-0" name="definition_name" id="definition_name">
+                                                    <option value="">Pick a state</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="kodeBarang">Jenis Stok</label>
+                                            <div class="row form-group small px-3">
+                                                <div class="col form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Stok
+                                                    </label>
+                                                </div>
+                                                <div class="col form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Tidak Ada Stok
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="kodeBarang">Tipe Item</label>
+                                            <div class="row form-group small px-3">
+                                                <div class="col form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Standar
+                                                    </label>
+                                                </div>
+                                                <div class="col form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">Tidak Ada Stok
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="row form-group small px-3">
+                                                <div class="col form-check form-check-inline">
+                                                    <label class="form-check-label">
+                                                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">Sementara
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="kodeBarang">Pemasok</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <select class="form-control border-0" id="exampleSt">
+                                                    <option>Pick a state</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">Harga Pokok</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <div class="input-group-prepend"><span class="input-group-text border-0">Rp</span></div>
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">Harga Jual</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <div class="input-group-prepend"><span class="input-group-text border-0">Rp</span></div>
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">Pajak 1</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">&nbsp</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                                <div class="input-group-append"><span class="input-group-text border-0">%</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">Pajak 2</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 pb-3">
+                                            <label for="kodeBarang">&nbsp</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                                <div class="input-group-append"><span class="input-group-text border-0">%</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="namaBarang">Jumlah Stock</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="namaBarang">Jumlah per penerimaan</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="namaBarang">Batas Pesan Ulang</label>
+                                            <div class="input-group shadow rounded border-0">
+                                                <input type="text" class="form-control border-0" id="exampleAmount" placeholder="Amount">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="namaBarang">Deskripsi</label>
+                                            <textarea class="form-control shadow rounded border-0" id="exampleMessage"></textarea>
+                                        </div>
+                                        <div class="col-sm-12 pb-3">
+                                            <label for="namaBarang">Upload Gambar</label>
+                                            <div class="input-group">
+                                              <div class="input-group-prepend">
+                                                <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="hidden" value="" name="item_image">
+                                                <input type="file" onchange="readURL(this);" name="" accept="image/*" class="custom-file-input" id="inputGroupFile01"
+                                                aria-describedby="inputGroupFileAddon01" aria-invalid="false">
+                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 pb-3">
+                                        <label for="exampleMessage">Deskripsi Alternatif dimungkinkan</label></br>
+                                        <input type="checkbox" name="allow_alt_description" value="1" id="allow_alt_description">
+                                    </div>
+                                    <div class="col-md-6 pb-3">
+                                        <label for="exampleMessage">Item Memiliki Nomor Serial</label></br>
+                                        <input type="checkbox" name="is_serialized" value="1" id="is_serialized">
+                                    </div>
+                                    <div class="col-md-6 pb-3">
+                                        <label for="exampleMessage">Item dihapus</label></br>
+                                        <input type="checkbox" name="is_deleted" value="1" id="is_deleted">
+                                    </div>
+                                </div>
+
+                            </form>
+                            <!-- Form -->
+
+                        </div>
+                        <div class="card-footer text-right">
+                            <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">Close</a>
+                            <button class="pay" id="submitadd" data-dismiss="modal" href="#" data-toggle="modal" data-target="#modalAddItemSuccess">Tambah Item</button>
+                        </div>
+                    </div>
+                </div>
+            </div>     
+        </div>
+    </div>
+                <!-- <div class="text-center">
+                    <a href="" class="btn btn-default btn-rounded" data-toggle="modal" data-target="#modalLoginAvatar">Launch
+                    Modal Login with Avatar</a>
+                </div> -->
+                <button class="additem" href="" data-toggle="modal" data-target="#myModal">
+                    Tambah Item
+                </button>
+
+                <ul class="ul-menu">
+                    <li class="kategori font-weight-bold"><a>Nasi</a></li>
+                    <li class="kategori font-weight-bold"><a>Mie</a></li>
+                    <li class="kategori font-weight-bold"><a>Discount</a></li>
+                    <li class="kategori font-weight-bold"><a>Snack</a></li>
+                    <li class="kategori font-weight-bold"><a>Minuman</a></li>
+                </ul>
+                <ul class="ul-menu2">
+                    <li class="kategori font-weight-bold" style="background-color: #FFF4F1; color: #FF2800"><a>Top Up</a></li>
+                    <li class="kategori font-weight-bold"><a>Bayar Tagihan</a></li>
+                </ul>
+            </div>
+            <div class="col-md-8 pt-4">
+                    
+                    <div class="row sub-kategori p-4 d-flex align-items-center">
+                        <!-- <i class="fa fa-chevron-left fa-lg mx-3" style="color: #FF2800; "></i> -->
+                        <div class="order-title font-weight-bold h5 mb-0">Top Up</div>
+                    </div>
+                    <div class="row row-item mt-3">
+
+                        <div class="col-xl col-md w-100 mx-3">
+                            <div class="row  d-flex justify-content-center align-items-start mb-2">
+                                <a href="top-up-detail.html"><img src="image/pulsa.svg"></a>
+                            </div>
+                            <div class="row  d-flex justify-content-center align-items-center">
+                                <p class="font-weight-bold">Pulsa</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xl col-md w-100 mx-3">
+                            <div class="row  d-flex justify-content-center align-items-start mb-2">
+                                <a href="top-up-detail.html"><img src="image/paket-data.svg"></a>
+                            </div>
+                            <div class="row  d-flex justify-content-center align-items-center">
+                                <p class="font-weight-bold">Paket Data</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xl col-md w-100 mx-3">
+                            <div class="row  d-flex justify-content-center align-items-start mb-2">
+                                <a href="top-up-detail.html"><img src="image/voucher-game.svg"></a>
+                            </div>
+                            <div class="row  d-flex justify-content-center align-items-center">
+                                <p class="font-weight-bold text-center">Voucher Game</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xl col-md w-100 mx-3">
+                            <div class="row  d-flex justify-content-center align-items-start mb-2">
+                                <a href="top-up-detail.html"><img src="image/listrik.svg"></a>
+                            </div>
+                            <div class="row  d-flex justify-content-center align-items-center">
+                                <p class="font-weight-bold">Listrik</p>
+                            </div>
+                        </div>
+
+                        <div class="col-xl col-md w-100 mx-3">
+                            <div class="row  d-flex justify-content-center align-items-start mb-2">
+                                <a href="top-up-detail.html"><img src="image/e-money.svg"></a>
+                            </div>
+                            <div class="row  d-flex justify-content-center align-items-center">
+                                <p class="font-weight-bold">E-money</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+            </div>
+            
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+                // console.log(input.files[0].size);
+                if(input.files[0].size < 128000){
+                    reader.onload = function (e) {
+                        $('#img-preview')
+                        .attr('src', e.target.result);
+                    };
+                    reader.readAsDataURL(input.files[0]);    
+                }
+                
+            }
+        }
+    </script>
+</body>
+</html>
