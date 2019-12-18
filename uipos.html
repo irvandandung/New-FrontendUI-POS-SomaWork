@@ -121,6 +121,46 @@
                   </div>
               </div>
             </div>
+
+            <div id="modalSave" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                    <div class="modal-content">
+                        <div class="card-header text-center">
+                            <p class="font-weight-bold mb-0">Simpan</p>
+                        </div>
+                        <div class="card-body pt-2 pb-4 px-4">
+                           <p class="my-3 ml-3"><i class="fa fa-user-circle mr-3"></i>Nama Pelanggan</p>
+                            <div class="input-group shadow rounded border-0">
+                                <input type="text" class="form-control border-0" name="item_number" value="" id="item_number" placeholder="Mas Jon">
+                            </div>
+                            <p class="my-3 ml-3"><i class="fa fa-phone mr-3"></i>No. Handphone</p>
+                            <div class="input-group shadow rounded border-0">
+                                <div class="input-group-prepend"><span class="input-group-text border-0">+62</span></div>
+                                <input type="text" class="form-control border-0" name="item_number" value="" id="item_number" placeholder="8009988898">
+                            </div>
+                        </div>
+                        <div class="card-footer d-flex justify-content-end align-items-center px-4">
+                            <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a>
+                            <button class="pay" id="submitadd" data-dismiss="modal" href="#" data-toggle="modal" data-target="#modalSaveSuccess">Simpan Order</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+             <div id="modalSaveSuccess" class="modal overflow-hidden" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal d-flex justify-content-center align-items-center h-100">
+                    <div class="modal-content border-0">
+                      <!-- <div class="modal-header"><p class="font-weight-bold mb-0">Logout</p></div> -->
+                      <div class="modal-body text-center"><img src="image/success-add-item.svg" alt="triangle with all three sides equal"height="87" width="100" /><p class="h5 my-3 text-success"><i class="fa fa-check-circle mr-3"></i>Success saving item</p>
+                      <!-- <div class="modal-footer"> -->
+                        <!-- <a class="mr-5" id="submitadd" data-dismiss="modal" style="color: red; cursor: pointer;">No</a> -->
+                        <button href="javascript:;" data-dismiss="modal" class="pay">Okay</button>
+
+                      </div>
+                  </div>
+              </div>
+            </div>
     </nav>
     <nav class="navbar fixed-bottom navbar-light bg-light navbar-btm">
         <div class="row w-100 text-center">
@@ -641,11 +681,11 @@
                 </div>
 
                 <div class="row p-3 mb-xl-3 mb-0">
-                    <div class="col pl-4">
-                        <button class="save w-100">Simpan</button>
+                    <div class="col d-flex justify-content-center align-items-center mx-2">
+                        <a href=""  class="btn pay save w-100 d-flex justify-content-center align-items-center mr-0" data-toggle="modal" data-target="#modalSave">Simpan</a>
                     </div>
-                    <div class="col pl-5 d-flex justify-content-center align-items-center">
-                        <a href="bayar.html" class="btn pay w-100 d-flex justify-content-center align-items-center">Bayar</a>
+                    <div class="col d-flex justify-content-center align-items-center">
+                        <a href="bayar.html" class="btn pay w-100 d-flex justify-content-center align-items-center px-1">Bayar</a>
                     </div>
                 </div>
             </div>
