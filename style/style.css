@@ -368,7 +368,8 @@ margin-right: 32px;
 }
 
 .row-item{
-    min-height: 65vh;
+    min-height: 75vh;
+    height: 75vh;
 }
 
 .text-order{
@@ -441,7 +442,8 @@ margin-right: 32px;
     }
 
     .row-item{
-        min-height: 69.6vh;
+        min-height: 77vh;
+        height: 77vh;
     }
 }
 
@@ -498,8 +500,8 @@ margin-right: 32px;
     }
 
     .row-item{
-        min-height: 0;
-        height: 486.469px;
+        min-height: 78.25vh;
+        height: 78.25vh;
     }
 
     .scroll-pay{
